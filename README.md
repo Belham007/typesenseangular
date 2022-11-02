@@ -8,6 +8,7 @@ To run this project locally, install the dependencies and run the local server:
 
 ```sh
 npm install
+npm install --save typesense-instantsearch-adapter
 npm start
 ```
 
@@ -19,3 +20,6 @@ yarn start
 ```
 
 Open http://localhost:3000 to see your app.
+
+If it didnt display any data generate ur api key and push the data and test
+
