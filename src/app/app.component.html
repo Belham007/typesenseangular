@@ -1,0 +1,48 @@
+<header class="header">
+  <h1 class="header-title">
+    <a href="/">typesenseangular</a>
+  </h1>
+  <p class="header-subtitle">
+    using
+    <a href="https://github.com/algolia/angular-instantsearch">
+      Angular InstantSearch
+    </a>
+  </p>
+</header>
+
+<div class="container">
+
+
+  <ais-instantsearch [config]="config">
+    <ais-configure [searchParameters]="{ hitsPerPage: 8 }"></ais-configure>
+    <div class="search-panel">
+      <div class="search-panel__results">
+        <div class="searchbox">
+          <ais-search-box placeholder=""></ais-search-box>
+        </div>
+
+        <ais-hits >
+          <ng-template let-hits="hits">
+            <div *ngFor="let hit of hits">
+      
+              <div class="bio">
+               <!-- <p>Title : {{ hit|json }}</p>  -->
+               <p>Title  : {{ hit.title }}</p> 
+               <p>Author : {{ hit.authors }}</p> 
+               <p>Rating : {{ hit.average_rating}}</p> 
+              </div>
+      
+            </div>
+          </ng-template>
+        </ais-hits>
+
+        <div class="pagination">
+          <ais-pagination></ais-pagination>
+        </div>
+      </div>
+
+    </div>
+  </ais-instantsearch>
+  <script type="module"  src="https://cdn.jsdelivr.net/npm/algoliasearch@4.10.5/dist/algoliasearch-lite.umd.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.44.0"></script>
+</div>
